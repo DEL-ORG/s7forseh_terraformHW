@@ -35,8 +35,8 @@ variable "instance_name" {
   default     = "EC2_terraform"
 }
 
-variable "region" {
+variable "aws_region" {
   description = "The AWS region in which to launch the instance."
   type        = string
-  default     = "us-east-1"
+  default     = " us-east-1 "
 }
