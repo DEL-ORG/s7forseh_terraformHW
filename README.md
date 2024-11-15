@@ -1,1 +1,1 @@
-# s7forseh_terraformHW
+# study_practice
