@@ -5,10 +5,10 @@ provider "aws" {
 
 # Define the S3 bucket for the Terraform backend
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "s7for-bucket" # Replace with a unique bucket name
+  bucket = "enanga" # Replace with a unique bucket name
 
   tags = {
-    Name        = "s7for-bucket"
+    Name        = "enanga"
     Environment = "dev"
   }
 }
@@ -71,7 +71,6 @@ resource "aws_iam_policy" "terraform_state_policy" {
 # Instead, when you run terraform init, manually configure the backend as follows:
 # 
 # terraform init \
-#  -backend-config="bucket=s7michael-bucket" \
 #  -backend-config="key=terraform/state.tfstate" \
 #  -backend-config="region=us-east-1" \
 #  -backend-config="dynamodb_table=terraform-state-lock" \
