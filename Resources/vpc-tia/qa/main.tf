@@ -17,7 +17,7 @@ terraform {
     bucket         = "enanga"
     key            = "qa_vpc_tia/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "erraform_state_lock"
+    dynamodb_table = "enangatable"
   }
 }
 
