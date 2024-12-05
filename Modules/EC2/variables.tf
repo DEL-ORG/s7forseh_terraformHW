@@ -1,5 +1,5 @@
 # variables.tf
-variable "ami" {
+variable "ami_id" {
   description = "The AMI ID for my EC2 instance."
   type        = string
   default     = "ami-06b21ccaeff8cd686"
@@ -14,13 +14,15 @@ variable "instance_type" {
 variable "key_name" {
   description = "The key pair name for SSH access to the EC2 instance."
   type        = string
-  default     = "terr_server_key"
+  sensitive   = true
+
+
 }
 
 variable "subnet_id" {
   description = "The subnet ID where the instance will be launched."
   type        = string
-  default     = "subnet-099580fc479efb633"
+
 }
 
 variable "associate_public_ip" {
@@ -40,3 +42,17 @@ variable "aws_region" {
   type        = string
   default     = " us-east-1 "
 }
+
+variable "availability_zone" {
+  description = "The AWS availability zone to deploy the subnet"
+  type        = string
+  default     = "us-east-1a"
+}
+
+variable "vpc_name" {
+  description = "The name of the existing VPC"
+  type        = string
+ 
+
+}
+

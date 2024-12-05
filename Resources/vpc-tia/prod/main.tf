@@ -15,7 +15,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket         = "enanga"
-    key            = "vpc_tia/terraform.tfstate"
+    key            = "prod_vpc_tia/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "enangatable"
   }

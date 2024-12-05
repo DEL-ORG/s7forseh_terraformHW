@@ -1,6 +1,6 @@
 
 # Create VPC
-resource "aws_vpc" "main" {
+resource "aws_vpc" "studyvpc1" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = true
   enable_dns_hostnames = true
@@ -12,7 +12,7 @@ resource "aws_vpc" "main" {
 
 # Create Public Subnet
 resource "aws_subnet" "public" {
-  vpc_id                  = aws_vpc.main.id
+  vpc_id                  = aws_vpc.studyvpc1.id
   cidr_block              = var.public_subnet_cidr
   map_public_ip_on_launch = true
   availability_zone       = var.availability_zone
@@ -24,7 +24,7 @@ resource "aws_subnet" "public" {
 
 # Create Private Subnet
 resource "aws_subnet" "private" {
-  vpc_id            = aws_vpc.main.id
+  vpc_id            = aws_vpc.studyvpc1.id
   cidr_block        = var.private_subnet_cidr
   availability_zone = var.availability_zone
 
@@ -34,8 +34,8 @@ resource "aws_subnet" "private" {
 }
 
 # Create Internet Gateway
-resource "aws_internet_gateway" "main" {
-  vpc_id = aws_vpc.main.id
+resource "aws_internet_gateway" "studyigw" {
+  vpc_id = aws_vpc.studyvpc1.id
 
   tags = {
     Name = "${var.environment}-igw"
@@ -44,11 +44,11 @@ resource "aws_internet_gateway" "main" {
 
 # Public Route Table
 resource "aws_route_table" "public" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.studyvpc1.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.main.id
+    gateway_id = aws_internet_gateway.studyigw.id
   }
 
   tags = {

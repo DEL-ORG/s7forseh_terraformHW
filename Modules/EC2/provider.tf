@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1" # Ensure no spaces around "us-east-1"
+  region = var.aws_region # Ensure no spaces around "us-east-1"
 }
 
 
