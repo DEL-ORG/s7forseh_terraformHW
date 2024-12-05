@@ -2,13 +2,13 @@
 variable "ami_id" {
   description = "The AMI ID for my EC2 instance."
   type        = string
-  default     = "ami-06b21ccaeff8cd686"
+  # default     = "ami-06b21ccaeff8cd686"
 }
 
 variable "instance_type" {
   description = "The instance type you will use for the EC2 instance."
   type        = string
-  default     = "t2.micro"
+  # default     = "t2.micro"
 }
 
 variable "key_name" {
@@ -34,13 +34,13 @@ variable "associate_public_ip" {
 variable "instance_name" {
   description = "The Name tag for the EC2 instance."
   type        = string
-  default     = "EC2_terraform"
+  # default     = "EC2_terraform"
 }
 
 variable "aws_region" {
   description = "The AWS region in which to launch the instance."
   type        = string
-  default     = " us-east-1 "
+  # default     = "us-east-1"
 }
 
 variable "availability_zone" {
@@ -52,7 +52,11 @@ variable "availability_zone" {
 variable "vpc_name" {
   description = "The name of the existing VPC"
   type        = string
- 
 
+
+}
+
+variable "tags" {
+  type = map(any)
 }
 

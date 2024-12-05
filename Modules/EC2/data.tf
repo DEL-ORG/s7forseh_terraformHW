@@ -8,14 +8,14 @@ data "aws_vpc" "default" {
 }
 
 data "aws_subnet" "subnet" {
-    filter {
+  filter {
     name   = "tag:Name"
     values = ["default-subnet"]
   }
 }
 
 data "aws_security_group" "security_group" {
-    filter {
+  filter {
     name   = "tag:Name"
     values = ["EC2SecurityGroup"]
   }
