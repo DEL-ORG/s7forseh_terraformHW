@@ -24,7 +24,7 @@ terraform {
 locals {
   aws_region    = "us-east-1"
   ami_id        = "ami-06b21ccaeff8cd686"
-  instance_type = "t2.micro" 
+  instance_type = "t2.micro"
   key_name      = "terr_server_key"
   instance_name = "EC2_terraform"
   subnet_id     = "subnet-08ddd191bda975ec4"
@@ -41,14 +41,14 @@ locals {
 }
 
 module "EC2" {
-  source                 = "../../../modules/EC2"
-  aws_region             = local.aws_region
-  ami_id                 = local.ami_id
-  instance_type          = local.instance_type
-  key_name               = local.key_name
-  instance_name          = local.instance_name
-  subnet_id              = local.subnet_id
-  vpc_name               = local.vpc_name
-  tags                   = local.tags
+  source        = "../../../modules/EC2"
+  aws_region    = local.aws_region
+  ami_id        = local.ami_id
+  instance_type = local.instance_type
+  key_name      = local.key_name
+  instance_name = local.instance_name
+  subnet_id     = local.subnet_id
+  vpc_name      = local.vpc_name
+  tags          = local.tags
 
 }

@@ -19,11 +19,11 @@ variable "key_name" {
 
 }
 
-variable "subnet_id" {
-  description = "The subnet ID where the instance will be launched."
-  type        = string
+# variable "subnet_id" {
+#   description = "The subnet ID where the instance will be launched."
+#   type        = string
 
-}
+# }
 
 variable "associate_public_ip" {
   description = "Whether to associate a public IP address with the instance."
@@ -34,7 +34,7 @@ variable "associate_public_ip" {
 variable "instance_name" {
   description = "The Name tag for the EC2 instance."
   type        = string
-  # default     = "EC2_terraform"
+  # default     = "EC2_1"
 }
 
 variable "aws_region" {

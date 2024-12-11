@@ -1,6 +1,7 @@
 # Create a security group for the EC2 instance
 resource "aws_security_group" "security_group" {
   name_prefix = var.security_group
+  vpc_id      = data.aws_vpc.dev-vpc.id
 
   ingress {
     from_port   = 22
