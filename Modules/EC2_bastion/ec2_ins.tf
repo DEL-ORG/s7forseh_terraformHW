@@ -62,12 +62,12 @@
 
 # Create an EC2 instance
 resource "aws_instance" "EC2_1" {
-  subnet_id     = data.aws_subnet.subnet.id
-  ami           = var.ami_id
-  instance_type = var.instance_type
-  key_name      = var.key_name
-  vpc_security_group_ids = [data.aws_security_group.security_group.id]  
-  
+  subnet_id              = data.aws_subnet.subnet.id
+  ami                    = var.ami_id
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  vpc_security_group_ids = [data.aws_security_group.security_group.id]
+
   # security_groups = [aws_security_group.security_group1.name]
 
   tags = {

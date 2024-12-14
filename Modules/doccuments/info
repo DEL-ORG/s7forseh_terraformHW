@@ -1,0 +1,20 @@
+
+# You need to allow communication from the public EC2 instance 
+# to the private EC2 instance. Update the existing security group rules to allow this
+
+ resource "aws_security_group_rule" "allow_private_access" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  security_group_id = data.aws_security_group.selected_sg.id
+  source_security_group_id = data.aws_security_group.selected_sg.id
+}
+
+Explanation
+1) Public EC2 Instance:
+Deployed in the public subnet with a public IP for internet access.
+2) Private EC2 Instance:
+Deployed in the private subnet without a public IP.
+3) Security Group Rule:
+Allows SSH (port 22) communication from the public EC2 instance to the private EC2 instance.

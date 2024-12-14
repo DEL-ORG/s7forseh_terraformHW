@@ -1,10 +1,5 @@
 # Data block to fetch the existing VPC by its Name tag
 # Fetch the default VPC
-
-# data "aws_vpc" "example" {
-#   id = "vpc-12345678"
-# }
-
 # data "aws_vpc" "dev-vpc" {
 #   filter {
 #     name   = "tag:Name"
