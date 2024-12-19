@@ -5,12 +5,12 @@ data "aws_vpc" "vpc_tia" {
   }
 }
 
-data "aws_subnet" "public-subnet" {
+data "aws_subnet" "private-subnet" {
    count = lookup(var.subnet_count, var.tags.environment)
 
   filter {
     name   = "tag:Name"
-    values = [format("%s-%s-public-subnet-%d", var.tags["environment"], var.tags["project"], count.index + 1)]
+    values = [format("%s-%s-private-subnet-%d", var.tags["environment"], var.tags["project"], count.index + 1)]
   }
 }
 

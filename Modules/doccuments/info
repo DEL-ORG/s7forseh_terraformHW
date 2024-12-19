@@ -18,3 +18,18 @@ Deployed in the public subnet with a public IP for internet access.
 Deployed in the private subnet without a public IP.
 3) Security Group Rule:
 Allows SSH (port 22) communication from the public EC2 instance to the private EC2 instance.
+
+
+tags = merge(
+  var.tags   #or
+  var.common_tags
+ Name = format("%s-%s-vpc", var.tags ["environment"], var.tags["project"])
+)
+
+#if you want to name a resources
+ Name = format("%s-%s-vpc", var.tags ["environment"], var.tags["project"])
+
+ #if you want mult  (put in varaible .tf)
+ {
+  varaible "subnet_count
+ }
